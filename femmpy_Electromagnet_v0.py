@@ -42,41 +42,20 @@ Created on Mon Nov  4 10:32:01 2019
 # Version:      0.1.1
 # =============================================================================
 import femm 
-import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import time
-import os
- 
+
 plt.close("all")
-
-t0 = time.time()
-
-Folder_dir = os.getcwd()
 
 Colors = np.array([[1,0,0],[0,0,1],[0,0.6,0],[1,0.5,0],[0.05,0.52,0.78],[0.17,0.5,0.34],[0.85,0.16,0],[0.08,0.17,0.55],[0.1,0.31,0.21],[0.75,0,0.75],[0,0.8,0.8],[0.2,0.8,0]])
 Colors = np.tile(Colors,[3,1])
 
-pi = np.pi
-# ----- Open femm application
-femm.openfemm() 
-
-# ----- Create new document
-#  0 for a magnetics problem, 
-#  1 for an electrostatics problem, 
-#  2 for a heat flow problem, 
-#  3 for a current flow problem
-
-femm.newdocument(0);
-
-# femm.hideconsole() 
-femm.main_resize(600,600) 
+pi = np.pi 
 
 mu0 = 4*pi*10**-7          # Vacuum magnetic permeability [H/m]
 
 Res20_Cu = 1.68*10**-8        # Resistivity copper [ohm*m] @ 20 [C]
 alphaT_Cu = 0.004041          # Temperature-resistivity coefficient copper [1/C]
-
 
 # =========================================================================
 # ================ Create Model Material (linear)
@@ -134,8 +113,20 @@ SizeMesh_Coil = 3
 # =========================================================================
 # ================ Initialise the FEMM application
 # =========================================================================
+# ----- Open femm application
+femm.openfemm() 
 
-femm.mi_probdef(0,'meters','planar', 10**-8, active_length ,30)
+# ----- Create new document
+#  0 for a magnetics problem, 
+#  1 for an electrostatics problem, 
+#  2 for a heat flow problem, 
+#  3 for a current flow problem
+
+femm.newdocument(0)
+
+femm.main_resize(600,600)
+
+femm.mi_probdef(0, 'meters', 'planar', 10**-8, active_length, 30)
 
 femm.showpointprops
 femm.main_restore
