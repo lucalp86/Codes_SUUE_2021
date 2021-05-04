@@ -6,10 +6,10 @@ Created on Mon Nov  4 10:32:01 2019
 """
 
 # ==========================================================================
-# Copyright (C) 2018 Dr. Luca Papini
+# Copyright (C) 2021 Dr. Luca Papini
 #
 # This file is part of Pyfemm, Python code for design and analysis of 
-# electrical machines
+# electromagnet
 #
 # Pyfemm is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,17 +29,13 @@ Created on Mon Nov  4 10:32:01 2019
 # =============================================================================
 # ================================ PYFEMM =====================================
 # ================================ DESIGN =====================================
-# ********************* Active Magnetic Bearing (AMB) *************************
-# ************************* Inner Rotor, w/o Sleeve  **************************
-# ********************* Single Layer Distributed winding **********************
+# ***************************** Electromagnet *********************************
 # =============================================================================
 #
 # =============================================================================
-# Program:      Py_MDfemm.m
-# Sub-program:  Py_MDfemm_AMB.m
 # Author:       Luca Papini (lpapini)
-# Date:         04/11/2019
-# Version:      0.1.1
+# Date:         05/05/2021
+# Version:      0.1
 # =============================================================================
 import femm 
 import numpy as np
